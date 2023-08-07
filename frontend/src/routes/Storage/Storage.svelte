@@ -4,7 +4,7 @@
     import TextItem from "./Text-Item.svelte";
     import * as fetcher from "../fetcher";
     import Header from "../Global/Header.svelte";
-    let items = [];
+    let items: any = [];
     let ids = [];
     ids = fetcher.get_items_ids();
     items = fetcher.get_items_by_ids(ids);

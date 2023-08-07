@@ -3,7 +3,7 @@
     export let title:string = "File title...";
     export let content:string = "00000000-0000-0000-0000-000000000000";
     export let tags:string[] = ["nice", "picture", "testpic"];
-    export let fileLink = "../src/assets/img/tooth-trollface.jpg"
+    export let fileLink = "../../static/cat.jpg"
         
 </script>
 

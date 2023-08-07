@@ -1,0 +1,65 @@
+{
+    "items": [
+        {
+            "id": "1",
+            "type": "link",
+            "title": "Link title",
+            "content": "youtube.com",
+            "tags": [
+                "pog", "test1", "lol", "lol2", "многабукав"
+            ]
+        },
+        
+        {
+            "id": "2",
+            "type": "text",
+            "title": "Text title",
+            "content": "Esse anim mollit non et irure culpa nisi culpa duis quis aute consequat.",
+            "tags": [
+                "notpog", "funread", "test6", "многабукав"
+            ]
+        },
+
+        {
+            "uuid": "9c99ff09-8e78-47a7-9422-3eff0b753a45",
+            "id": "3",
+            "type": "file",
+            "title": "File title",
+            "content": "picture.png",
+            "tags": [
+                "unny", "xd", "testpic", "manypixels"
+            ]
+        },
+        
+        {
+            "id": "4",
+            "type": "text",
+            "title": "Text title2",
+            "content": "Non id irure adipisicing excepteur adipisicing anim officia incididunt cupidatat amet dolore amet deserunt occaecat. Ad tempor nisi commodo quis sint consectetur est quis. Consectetur reprehenderit veniam nisi aute magna ex sint consectetur culpa commodo anim sit voluptate occaecat. Cillum occaecat deserunt qui veniam pariatur irure culpa nulla dolore ad do eu quis est. Duis eiusmod dolor ipsum pariatur aliquip minim ipsum mollit cupidatat laborum nisi mollit excepteur. Incididunt ut amet aute ullamco qui cillum. Proident anim aliquip laboris quis fugiat ea. Culpa minim nulla ad quis do magna.",
+            "tags": [
+                "loremlong", "funread", "test6", "многабукав"
+            ]
+        },
+
+        {
+            "uuid": "ec2db849-2597-490b-ab7e-9c30bbb5e457",
+            "id": "5",
+            "type": "file",
+            "title": "File title2",
+            "content": "picture2.png",
+            "tags": [
+                "unny2", "xd", "testpic", "manypixels"
+            ]
+        },
+
+        {
+            "id": "6",
+            "type": "link",
+            "title": "Link title2",
+            "content": "g.co",
+            "tags": [
+                "based", "xd", "testlink", "goog"
+            ]
+        }
+    ]
+}
