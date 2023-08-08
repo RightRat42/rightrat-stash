@@ -3,13 +3,16 @@
     export let title:string = "File title...";
     export let content:string = "00000000-0000-0000-0000-000000000000";
     export let tags:string[] = ["nice", "picture", "testpic"];
+    export let id: string = "0";
     export let fileLink = "%sveltekit.assets%/cat.jpg"
         
 </script>
 
 <div class="item">
     <div class="item-header">
-        <h3 class="file-title">{ title }</h3>
+        <a href="/Storage/{ id }" target="_blank">
+            <h3 class="file-title">{ title }</h3>
+        </a>
     </div>
     <div class="item-body">
         <a href="{ fileLink }" target="_blank">

@@ -1,13 +1,16 @@
 <script lang="ts">
     import Tag from "./Tag.svelte";
-    export let title:string = "Link title...";
-    export let content:string = "g.co";
-    export let tags:string[] = ["cool", "test", "test4"];
+    export let title: string = "Link title...";
+    export let content: string = "g.co";
+    export let tags: string[] = ["cool", "test", "test4"];
+    export let id: string = "0";
 </script>
 
 <div class="item">
     <div class="item-header">
-        <h3 class="link-title">{ title }</h3>
+        <a href="/Storage/{ id }" target="_blank">
+            <h3 class="link-title">{ title }</h3>
+        </a>
     </div>
     <div class="item-body">
         <a href="https://{ content }" target="_blank">
@@ -52,12 +55,13 @@
         margin: 0px;
 
         display: contents;
-        width: max(calc(100vw*3/16), 200);
+        width: inherit;
         height: 50px;
         flex-direction: column;
         justify-content: center;
         flex-shrink: 0;
 
+        white-space: nowrap;
         overflow: hidden;
         color: #000;
         text-overflow: ellipsis;

@@ -17,12 +17,12 @@
         {#each items as x}
         <div class="gridContainer">
             {#if x.type=="link"}
-                <LinkItem title="{ x.title }" content="{ x.content }" tags={x.tags}/>
+                <LinkItem id="{ x.id }" title="{ x.title }" content="{ x.content }" tags={ x.tags }/>
             {:else if x.type=="text"}
-                <TextItem title="{ x.title }" content="{ x.content }" tags={x.tags}/>
+                <TextItem id="{ x.id }" title="{ x.title }" content="{ x.content }" tags={ x.tags }/>
             {:else if x.type=="file"}
                 <script lang="ts"></script>
-                <FileItem title="{ x.title }" content="{ x.content }" tags={x.tags}/>
+                <FileItem id="{ x.id }" title="{ x.title }" content="{ x.content }" tags={ x.tags }/>
             {/if}
         </div>
         {/each}
