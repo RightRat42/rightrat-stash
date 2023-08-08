@@ -3,28 +3,29 @@
     export let title:string = "File title...";
     export let content:string = "00000000-0000-0000-0000-000000000000";
     export let tags:string[] = ["nice", "picture", "testpic"];
-    export let fileLink = "../../static/cat.jpg"
+    export let fileLink = "%sveltekit.assets%/cat.jpg"
         
 </script>
 
 <div class="item">
-    <a href="{ fileLink }" target="_blank">
     <div class="item-header">
         <h3 class="file-title">{ title }</h3>
     </div>
     <div class="item-body">
-        <p class="file-link" >{ content }</p>
+        <a href="{ fileLink }" target="_blank">
+            <p class="file-link" >{ content }</p>
+        </a>
     </div>
     <div class="item-footer">
         {#each tags as x}
             <Tag tagname="{x}"/>
         {/each}
     </div>
-    </a>
 </div>
 
 <style>
     .item {
+        display: grid;
         width: 25vw;
         min-width: 250px;
         height: 150px;
@@ -36,7 +37,9 @@
     }
 
     .item-header {
+        display: flex;
         position: relative;
+        justify-content: center;
         
         width: inherit;
         min-width: inherit;
@@ -47,12 +50,12 @@
         background: #FBB;
     }
 
-    .file-title {
+    h3 {
         position: relative;
         margin: 0px;
 
-        display: flex;
-        width: max(calc(100vw*3/16), 200);
+        display: contents;
+        width: inherit;
         height: 50px;
         flex-direction: column;
         justify-content: center;

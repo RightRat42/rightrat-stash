@@ -60,6 +60,16 @@
             "tags": [
                 "based", "xd", "testlink", "goog"
             ]
+        },
+
+        {
+            "id": "7",
+            "type": "text",
+            "title": "Text title",
+            "content": "Esse anim mollit non et irure culpa nisi culpa duis quis aute consequat.",
+            "tags": [
+                "notpog", "funread", "test6", "многабукав"
+            ]
         }
     ]
 }

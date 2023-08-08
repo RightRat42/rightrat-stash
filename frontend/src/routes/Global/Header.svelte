@@ -15,7 +15,8 @@
 
 <style>
     header {
-        min-width: 450px;
+        margin: 0;
+        min-width: 250px;
         display: flex;
         flex: 7;
         top: 0;
@@ -35,6 +36,7 @@
         margin: 0px;
         display: flex;
         width: 480px;
+        min-width: 250px;
         height: inherit;
         flex-direction: column;
         justify-content: center;
@@ -43,8 +45,7 @@
         color: #000;
         text-align: center;
         font-family: Inter;
-        line-height: normal;
-        font-size: min(9vw, 50px);
+        font-size: max(3vw, 20px);
         font-style: normal;
         font-weight: 700;
         line-height: normal;
@@ -58,20 +59,21 @@
         flex-shrink: 0;
         width: 100vw;
         flex-shrink: 0;
-        min-width: 450px;
+        min-width: 250px;
         border-radius: 25px;
-        border: 2px  solid #000;
-        border-top: 0;
-        border-bottom: 0;
+        border: 1px  solid #000;
         box-sizing: border-box;
         background: #DDD;
         
     }
 
     .add {
-        display: block;
+        display: inline-block;
         margin: 0;
         padding: 0;
         width: 10vw;
+        overflow: hidden;
+        white-space: nowrap;
+        font-size: min(3vw, 20px);
     }
 </style>

@@ -15,6 +15,7 @@
     
     <div class="storage">
         {#each items as x}
+        <div class="gridContainer">
             {#if x.type=="link"}
                 <LinkItem title="{ x.title }" content="{ x.content }" tags={x.tags}/>
             {:else if x.type=="text"}
@@ -23,6 +24,7 @@
                 <script lang="ts"></script>
                 <FileItem title="{ x.title }" content="{ x.content }" tags={x.tags}/>
             {/if}
+        </div>
         {/each}
     </div>
 </body>
@@ -31,39 +33,25 @@
     
 
     body {
+        margin: 0px;
+        padding: 0px;
         display: flex;
         align-content: start;
         flex-direction: column;
     }
 
-    /* h1 {
-        margin: 0px;
-        display: flex;
-        width: 480px;
-        height: inherit;
-        flex-direction: column;
-        justify-content: center;
-        flex-shrink: 0;
-
-        color: #000;
-        text-align: center;
-        font-family: Inter;
-        line-height: normal;
-        font-size: min(9vw, 50px);
-        font-style: normal;
-        font-weight: 700;
-        line-height: normal;
-    } */
-
-
     .storage {
-        display: flex;
+        padding: 10px;
+        display: grid;
+        grid-gap: 30px;
+        grid-template-columns: repeat(3, 1fr);
+
         flex-direction: row;
         flex-wrap: wrap;
         flex: 90;
         width: 100vw;
         flex-shrink: 0;
-        min-width: 450px;
+        min-width: 250px;
         justify-content: space-evenly;
         align-items:center;
 
@@ -71,5 +59,58 @@
         border: 2px solid #000;
         box-sizing: border-box;
         background: #FFF;
+    }
+
+    @media (max-width: 800px){
+        .storage {
+            padding: 20px;
+            display: grid;
+            grid-gap: 10px;
+            grid-template-columns: repeat(2, 1fr);
+
+            flex-direction: row;
+            flex-wrap: wrap;
+            flex: 90;
+            width: 100vw;
+            flex-shrink: 0;
+            min-width: 250px;
+            justify-content: space-evenly;
+            align-items:center;
+
+            border-radius: 25px;
+            border: 2px solid #000;
+            box-sizing: border-box;
+            background: #FFF;
+        }
+    }
+
+    @media (max-width: 550px){
+        .storage {
+            padding: 10px;
+            display: grid;
+            grid-gap: 10px;
+            grid-template-columns: 1fr;
+
+            flex-direction: row;
+            flex-wrap: wrap;
+            flex: 90;
+            width: 100vw;
+            flex-shrink: 0;
+            min-width: 250px;
+            justify-content: space-evenly;
+            align-items:center;
+
+            border-radius: 25px;
+            border: 2px solid #000;
+            box-sizing: border-box;
+            background: #FFF;
+        }
+    }
+
+    
+
+    .gridContainer {
+        overflow: auto;
+        place-self: center;
     }
 </style>

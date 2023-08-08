@@ -1,5 +1,14 @@
 <script>
     import Storage from "./Storage.svelte";
-
 </script>
-<Storage />
+
+<body>
+    <Storage />    
+</body>
+
+<style>
+    :global(body) {
+        margin: 0;
+        padding: 0;
+    }
+</style>

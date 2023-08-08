@@ -6,19 +6,19 @@
 </script>
 
 <div class="item">
-    <a href="https://{ content }" target="_blank">
     <div class="item-header">
         <h3 class="link-title">{ title }</h3>
     </div>
     <div class="item-body">
-        <p class="link-url" >{ content }</p>
+        <a href="https://{ content }" target="_blank">
+            <p class="link-url" >{ content }</p>
+        </a>
     </div>
     <div class="item-footer">
         {#each tags as x}
             <Tag tagname="{x}"/>
         {/each}
     </div>
-    </a>
 </div>
 
 <style>
@@ -34,7 +34,9 @@
     }
 
     .item-header {
+        display: flex;
         position: relative;
+        justify-content: center;
         
         width: inherit;
         min-width: inherit;
@@ -49,7 +51,7 @@
         position: relative;
         margin: 0px;
 
-        display: flex;
+        display: contents;
         width: max(calc(100vw*3/16), 200);
         height: 50px;
         flex-direction: column;
@@ -105,6 +107,7 @@
         flex-direction: row;
         align-items: center;
         width: inherit;
+        min-width: 250px;
         height: 50px;
         flex-shrink: 0;
         overflow: scroll;

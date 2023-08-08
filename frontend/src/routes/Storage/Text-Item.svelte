@@ -32,8 +32,10 @@
     }
 
     .item-header {
+        display: flex;
         position: relative;
-        
+        justify-content: center;
+
         width: inherit;
         min-width: inherit;
         height: 50px;
@@ -47,7 +49,7 @@
         position: relative;
         margin: 0px;
 
-        display: flex;
+        display: contents;
         width: max(calc(100vw*3/16), 200);
         height: 50px;
         flex-direction: column;
