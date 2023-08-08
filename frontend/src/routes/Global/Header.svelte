@@ -1,9 +1,15 @@
 <script lang="ts">
-    export let type: string = "normal";
+    export let type: string = "default";
+    export let name: string = "default"
 </script>
 
 <header>
-    <h1>RightRat's Cloud</h1>
+    {#if name != "default"}
+        <h1>{ name }</h1>
+        
+    {:else}
+        <h1>RightRat's Stash</h1>
+    {/if}
 </header>
 {#if type == "storage"}
 <div class="addDiv">
@@ -35,7 +41,7 @@
     h1 {
         margin: 0px;
         display: flex;
-        width: 480px;
+        width: max-content;
         min-width: 250px;
         height: inherit;
         flex-direction: column;
