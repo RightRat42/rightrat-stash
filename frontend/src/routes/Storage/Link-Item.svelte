@@ -25,6 +25,13 @@
 </div>
 
 <style>
+    a {
+        width: inherit;
+        height: inherit;
+        min-width: inherit;
+        min-height: inherit;
+        text-align: center;
+    }
     .item {
         min-width: 250px;
         width: 25vw;
@@ -51,22 +58,21 @@
     }
 
     .link-title {
-        position: relative;
-        margin: 0px;
-
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        margin: 0;
         display: contents;
         width: inherit;
         height: 50px;
-        flex-direction: column;
-        justify-content: center;
-        flex-shrink: 0;
 
         white-space: nowrap;
         overflow: hidden;
         color: #000;
         text-overflow: ellipsis;
         font-family: Inter;
-        font-size: 30px;
+        font-size: max(min(3vw, 25px), 20px);
         font-style: normal;
         font-weight: 700;
         line-height: normal;        

@@ -1,10 +1,10 @@
 <script lang="ts">
-    import type { PageData } from "./$types";
     import { page } from "$app/stores"
     import data from "../../../../../backend/src/assets/data.json"
     import files from "../../../../../backend/src/assets/files.json"
     import Header from "../../Global/Header.svelte";
     import SingleItem from "./Single-Item.svelte";
+
     export let fileID: string = $page.params.slug;
     export let title: string = "Item title";
     export let type: string = "text";
@@ -21,8 +21,8 @@
 </script>
 
 <body>
-    <Header name="{ title }" />
-    <SingleItem type="{ type }" fileID="{ fileID }" title="{ title }" content="{ content }" />
+    <Header name="{ title }"/>
+    <SingleItem type="{ type }" fileID="{ fileID }" content="{ content }" />
 </body>
 
 <style>

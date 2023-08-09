@@ -27,6 +27,14 @@
 </div>
 
 <style>
+    a {
+        width: inherit;
+        height: inherit;
+        min-width: inherit;
+        min-height: inherit;
+        text-align: center;
+    }
+
     .item {
         display: grid;
         width: 25vw;
@@ -53,9 +61,12 @@
         background: #FBB;
     }
 
-    h3 {
-        position: relative;
-        margin: 0px;
+    .file-title {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        margin: 0;
 
         display: contents;
         width: inherit;
@@ -68,7 +79,7 @@
         color: #000;
         text-overflow: ellipsis;
         font-family: Inter;
-        font-size: 30px;
+        font-size: max(min(3vw, 25px), 20px);
         font-style: normal;
         font-weight: 700;
         line-height: normal;        

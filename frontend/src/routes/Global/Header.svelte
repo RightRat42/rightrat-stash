@@ -35,7 +35,7 @@
         border: 2px solid #000;
         box-sizing: border-box;
         background: #BBB;
-        box-shadow: 0px 50px 50px 0px rgba(255, 0, 0, 0.25);
+        box-shadow: 0px 25px 25px 0px rgba(33, 33, 33, 0.25);
     }
 
     h1 {

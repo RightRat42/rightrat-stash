@@ -23,10 +23,18 @@
 </div>
 
 <style>
+    a {
+        width: inherit;
+        height: inherit;
+        min-width: inherit;
+        min-height: inherit;
+        text-align: center;
+    }
+
     .item {
         min-width: 250px;
         width: 25vw;
-        height: 200px;
+        height: 150px;
         flex-shrink: 0;
         
         border-radius: 25px;
@@ -49,8 +57,11 @@
     }
 
     .text-title {
-        position: relative;
-        margin: 0px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        margin: 0;
 
         display: contents;
         width: max(calc(100vw*3/16), 200);
@@ -63,7 +74,7 @@
         color: #000;
         text-overflow: ellipsis;
         font-family: Inter;
-        font-size: 30px;
+        font-size: max(min(3vw, 25px), 20px);
         font-style: normal;
         font-weight: 700;
         line-height: normal;        
@@ -79,7 +90,7 @@
         display:inline-block;
         width: calc(800vw/40);
         min-width: 200px;
-        height: 100px;
+        height: 50px;
         flex-direction: column;
         justify-content: center;
         flex-shrink: 0;
@@ -98,7 +109,7 @@
         
     }
     .item-body {
-        height: 100px;
+        height: 50px;
         width: inherit;
         min-width: inherit;
         margin: 0;
@@ -117,5 +128,9 @@
 
         border-radius: 0px 0px 24px 24px;
         background: #428442;
+    }
+
+    *::-webkit-scrollbar{
+        display: none;
     }
 </style>
