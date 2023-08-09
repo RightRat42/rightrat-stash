@@ -3,7 +3,8 @@
     import data from "../../../../../backend/src/assets/data.json"
     import files from "../../../../../backend/src/assets/files.json"
     import Header from "../../Global/Header.svelte";
-    import SingleButtons from "./Single-Buttons.svelte";
+    import SingleButtonsView from "./Single-Buttons-View.svelte";
+    import SingleButtons from "./Single-Buttons-View.svelte";
     import SingleItem from "./Single-Item.svelte";
 
     export let fileID: string = $page.params.slug;
@@ -24,12 +25,15 @@
 <body>
     <Header name="{ title }"/>
     <SingleItem type="{ type }" fileID="{ fileID }" content="{ content }" />
-    <SingleButtons />
+    <SingleButtonsView />
 </body>
 
 <style>
     :global(body) {
+        display: flex;
+        flex-direction: column;
         margin: 0;
         padding: 0;
+        background-color: #888;
     }
 </style>

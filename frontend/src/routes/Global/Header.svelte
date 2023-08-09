@@ -34,7 +34,7 @@
         border-radius: 25px;
         border: 2px solid #000;
         box-sizing: border-box;
-        background: #BBB;
+        background: #EEE;
         box-shadow: 0px 25px 25px 0px rgba(33, 33, 33, 0.25);
     }
 
