@@ -10,7 +10,7 @@
 
 <div class="item">
     <div class="item-header">
-        <a href="/Storage/{ id }" target="_blank">
+        <a href="/Storage/{ id }">
             <h3 class="file-title">{ title }</h3>
         </a>
     </div>

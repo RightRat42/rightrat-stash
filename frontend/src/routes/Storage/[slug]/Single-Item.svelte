@@ -22,11 +22,11 @@
         display: flex;
         position: relative;
         
-        flex-direction: row;
+        flex-direction: column;
         flex-wrap: wrap;
         flex: 90;
         width: 100vw;
-        height: 100%;
+        height: auto;
         flex-shrink: 0;
         min-width: 250px;
         justify-content: space-evenly;

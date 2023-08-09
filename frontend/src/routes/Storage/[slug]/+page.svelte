@@ -3,6 +3,7 @@
     import data from "../../../../../backend/src/assets/data.json"
     import files from "../../../../../backend/src/assets/files.json"
     import Header from "../../Global/Header.svelte";
+    import SingleButtons from "./Single-Buttons.svelte";
     import SingleItem from "./Single-Item.svelte";
 
     export let fileID: string = $page.params.slug;
@@ -23,6 +24,7 @@
 <body>
     <Header name="{ title }"/>
     <SingleItem type="{ type }" fileID="{ fileID }" content="{ content }" />
+    <SingleButtons />
 </body>
 
 <style>
