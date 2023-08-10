@@ -64,6 +64,7 @@ onMount(() => url = window.location.href);
 
     .click:hover {
         filter: brightness(95%);
+        cursor: pointer;
     }
 
     

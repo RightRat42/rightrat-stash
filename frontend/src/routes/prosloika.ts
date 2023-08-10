@@ -24,3 +24,11 @@ export function get_items_by_ids (ids: string[]) {
     }
     return ret;
 }
+
+export function SaveChanges(textContentToSave: string, innerID: number): undefined {
+        
+    data.items[innerID].content = textContentToSave;
+    console.log(data.items[innerID].content);
+    
+    // console.log(data.items[innerID].content);
+}

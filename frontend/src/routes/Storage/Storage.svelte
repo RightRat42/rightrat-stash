@@ -2,7 +2,7 @@
     import FileItem from "./File-Item.svelte";
     import LinkItem from "./Link-Item.svelte";
     import TextItem from "./Text-Item.svelte";
-    import * as fetcher from "../fetcher";
+    import * as fetcher from "../prosloika";
     import Header from "../Global/Header.svelte";
     let items: any = [];
     let ids = [];

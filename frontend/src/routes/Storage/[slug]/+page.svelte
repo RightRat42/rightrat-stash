@@ -4,7 +4,6 @@
     import files from "../../../../../backend/src/assets/files.json"
     import Header from "../../Global/Header.svelte";
     import SingleButtonsView from "./Single-Buttons-View.svelte";
-    import SingleButtons from "./Single-Buttons-View.svelte";
     import SingleItem from "./Single-Item.svelte";
 
     export let itemID: string = $page.params.slug;
@@ -20,6 +19,8 @@
             content = data.items[i].content; 
         }
     }
+    
+    
 </script>
 
 <body>
@@ -29,7 +30,7 @@
 </body>
 
 <style>
-    body {
+    :global(body) {
         display: flex;
         flex-direction: column;
         margin: 0;
