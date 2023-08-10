@@ -8,4 +8,13 @@
         padding: 0;
         background-color: #FFF;
     }
+    * ::webkit-scrollbar {
+    display: none;
+}
+
+* {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
 </style>
