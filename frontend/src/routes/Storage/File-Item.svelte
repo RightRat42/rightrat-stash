@@ -4,7 +4,6 @@
     export let content:string = "00000000-0000-0000-0000-000000000000";
     export let tags:string[] = ["nice", "picture", "testpic"];
     export let id: string = "0";
-    export let fileLink = "%sveltekit.assets%/cat.jpg"
         
 </script>
 
@@ -15,7 +14,7 @@
         </a>
     </div>
     <div class="item-body">
-        <a href="{ fileLink }" target="_blank">
+        <a href="https://g.co" target="_blank">
             <p class="file-link" >{ content }</p>
         </a>
     </div>
