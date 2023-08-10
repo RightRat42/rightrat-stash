@@ -1,4 +1,5 @@
 <script lang="ts">
+    import { base } from "$app/paths";
     import Tag from "./Tag.svelte";
     export let title:string = "File title...";
     export let content:string = "00000000-0000-0000-0000-000000000000";
@@ -9,7 +10,7 @@
 
 <div class="item">
     <div class="item-header">
-        <a href="/Storage/{ id }">
+        <a href="{ base }/Storage/{ id }">
             <h3 class="file-title">{ title }</h3>
         </a>
     </div>

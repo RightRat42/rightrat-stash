@@ -1,4 +1,5 @@
 <script lang="ts">
+    import { base } from "$app/paths";
     import Tag from "./Tag.svelte";
     export let title: string = "Link title...";
     export let content: string = "g.co";
@@ -8,7 +9,7 @@
 
 <div class="item">
     <div class="item-header">
-        <a href="/Storage/{ id }">
+        <a href="{ base }/Storage/{ id }">
             <h3 class="link-title">{ title }</h3>
         </a>
     </div>
