@@ -6,6 +6,6 @@
     :global(body) {
         margin: 0;
         padding: 0;
-        background-color: #888;
+        background-color: #FFF;
     }
 </style>

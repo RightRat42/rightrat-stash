@@ -1,10 +1,6 @@
 <script lang="ts">
-    export let fileID: string = "0";
     export let type: string = "text";
     export let content: string = "Sample text";
-
-
-    console.log(fileID, type, content)
 
 </script>
 

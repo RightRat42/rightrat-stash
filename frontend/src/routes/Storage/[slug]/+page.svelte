@@ -7,14 +7,14 @@
     import SingleButtons from "./Single-Buttons-View.svelte";
     import SingleItem from "./Single-Item.svelte";
 
-    export let fileID: string = $page.params.slug;
+    export let itemID: string = $page.params.slug;
     export let title: string = "Item title";
     export let type: string = "text";
     export let content: string = "Sample text";
 
     
     for (let i = 0; i < data.items.length; ++i){
-        if (data.items[i].id == fileID) {
+        if (data.items[i].id == itemID) {
             title = data.items[i].title
             type = data.items[i].type;
             content = data.items[i].content; 
@@ -24,12 +24,12 @@
 
 <body>
     <Header name="{ title }"/>
-    <SingleItem type="{ type }" fileID="{ fileID }" content="{ content }" />
+    <SingleItem type="{ type }" content="{ content }" />
     <SingleButtonsView />
 </body>
 
 <style>
-    :global(body) {
+    body {
         display: flex;
         flex-direction: column;
         margin: 0;
