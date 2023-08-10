@@ -1,13 +1,13 @@
 <script lang="ts">
     import { onMount } from 'svelte';
+    import { base } from '$app/paths';
 
-let url = ``;
+export let id = "0";
 
-onMount(() => url = window.location.href);
 </script>
 
 <footer>
-    <a class="click" href="{url}/edit">
+    <a class="click" href="{ base }/Storage/{ id }/edit">
         <p>edit</p>
     </a>
     <button class="click">

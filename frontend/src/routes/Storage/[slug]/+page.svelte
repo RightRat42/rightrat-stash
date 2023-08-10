@@ -19,14 +19,14 @@
             content = data.items[i].content; 
         }
     }
-    
+
     
 </script>
 
 <body>
     <Header name="{ title }"/>
     <SingleItem type="{ type }" content="{ content }" />
-    <SingleButtonsView />
+    <SingleButtonsView id="{ itemID }"/>
 </body>
 
 <style>
