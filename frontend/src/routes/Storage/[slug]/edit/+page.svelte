@@ -1,4 +1,5 @@
 <script lang="ts">
+    import { base } from "$app/paths";
     import { page } from "$app/stores"
     import data from "../../../../../../backend/src/assets/data.json"
     import files from "../../../../../../backend/src/assets/files.json"
@@ -15,7 +16,7 @@
     export let content: string = "Sample text";
 
     let innerID: number = 0;
-    let parentUrl = $page.url.origin + "/Storage/" + itemID + "/";
+    let parentUrl = $page.url.origin + base + "/Storage/" + itemID + "/";
     
     for (let i = 0; i < data.items.length; ++i){
         if (data.items[i].id == itemID) {
