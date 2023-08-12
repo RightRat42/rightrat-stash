@@ -22,6 +22,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"firebase": "^8.6.1",
 		"gh-pages": "^5.0.0"
 	}
 }
