@@ -5,7 +5,6 @@
     export let content:string = "00000000-0000-0000-0000-000000000000";
     export let tags:string[] = ["nice", "picture", "testpic"];
     export let id: string = "0";
-        
 </script>
 
 <div class="item">
@@ -42,7 +41,7 @@
         min-width: 250px;
         height: 150px;
         flex-shrink: 0;
-        
+
         border-radius: 25px;
         border: 1px solid #A00;
         background: #FFF;
@@ -52,7 +51,7 @@
         display: flex;
         position: relative;
         justify-content: center;
-        
+
         width: inherit;
         min-width: inherit;
         height: 50px;
@@ -83,7 +82,7 @@
         font-size: max(min(3vw, 25px), 20px);
         font-style: normal;
         font-weight: 700;
-        line-height: normal;        
+        line-height: normal;
     }
 
     .file-link {
@@ -91,7 +90,7 @@
         margin: 0px;
         margin-left: max(calc(100vw/40), 25px);
         margin-right: max(calc(100vw/40), 25px);
-        
+
 
         display: flex;
         width: calc(800vw/40);
@@ -112,8 +111,9 @@
         line-height: normal;
         text-decoration-line: underline;
         text-align: left;
-        
+
     }
+
     .item-body {
         height: 50px;
         width: inherit;

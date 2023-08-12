@@ -17,7 +17,7 @@
         padding: 10px;
         display: flex;
         position: relative;
-        
+
         flex-direction: column;
         flex-wrap: wrap;
         flex: 90;

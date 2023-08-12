@@ -34,12 +34,13 @@
         text-align: center;
         text-decoration: none;
     }
+
     .item {
         min-width: 250px;
         width: 25vw;
         height: 150px;
         flex-shrink: 0;
-        
+
         border-radius: 25px;
         border: 1px solid #00A;
         background: #FFF;
@@ -49,7 +50,7 @@
         display: flex;
         position: relative;
         justify-content: center;
-        
+
         width: inherit;
         min-width: inherit;
         height: 50px;
@@ -85,7 +86,6 @@
         margin: 0px;
         margin-left: max(calc(100vw/40), 25px);
         margin-right: max(calc(100vw/40), 25px);
-        
 
         display: flex;
         width: calc(800vw/40);
@@ -106,6 +106,7 @@
         text-decoration-line: underline;
         text-align: left;
     }
+
     .item-body {
         height: 50px;
         width: inherit;
@@ -127,6 +128,7 @@
         border-radius: 0px 0px 25px 25px;
         background: #424284;
     }
+
     *::-webkit-scrollbar{
         display: none;
     }

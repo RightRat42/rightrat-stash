@@ -12,7 +12,7 @@
 
 <body>
     <Header type="storage" />
-    
+
     <div class="storage">
         {#each items as x}
         <div class="gridContainer">

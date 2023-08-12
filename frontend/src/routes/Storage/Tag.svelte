@@ -26,7 +26,6 @@
         flex-direction: column;
         justify-content: center;
         flex-shrink: 0;
-        
 
         color: #000;
         font-family: Inter;
