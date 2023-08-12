@@ -11,7 +11,6 @@
     export let type: string = "text";
     export let content: string = "Sample text";
 
-    
     for (let i = 0; i < data.items.length; ++i){
         if (data.items[i].id == itemID) {
             title = data.items[i].title
@@ -19,8 +18,6 @@
             content = data.items[i].content; 
         }
     }
-    
-    
 </script>
 
 <body>

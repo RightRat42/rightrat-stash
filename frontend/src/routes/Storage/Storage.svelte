@@ -12,7 +12,7 @@
 
 <body>
     <Header type="storage" />
-    
+
     <div class="storage">
         {#each items as x}
         <div class="gridContainer">
@@ -30,8 +30,6 @@
 </body>
 
 <style>
-    
-
     body {
         margin: 0px;
         padding: 0px;
@@ -106,8 +104,6 @@
             background: #FFF;
         }
     }
-
-    
 
     .gridContainer {
         overflow: auto;

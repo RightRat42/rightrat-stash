@@ -6,7 +6,7 @@
 <header>
     {#if name != "default"}
         <h1>{ name }</h1>
-        
+
     {:else}
         <h1>RightRat's Stash</h1>
     {/if}
@@ -70,7 +70,6 @@
         border: 1px  solid #000;
         box-sizing: border-box;
         background: #DDD;
-        
     }
 
     .add {

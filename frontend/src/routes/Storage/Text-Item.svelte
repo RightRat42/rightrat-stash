@@ -30,6 +30,7 @@
         min-width: inherit;
         min-height: inherit;
         text-align: center;
+        text-decoration: none;
     }
 
     .item {
@@ -37,7 +38,7 @@
         width: 25vw;
         height: 150px;
         flex-shrink: 0;
-        
+
         border-radius: 25px;
         border: 1px solid #0A0;
         background: #FFF;
@@ -78,7 +79,7 @@
         font-size: max(min(3vw, 25px), 20px);
         font-style: normal;
         font-weight: 700;
-        line-height: normal;        
+        line-height: normal;
     }
 
     .text {
@@ -86,7 +87,6 @@
         margin: 0px;
         margin-left: max(calc(100vw/40), 25px);
         margin-right: max(calc(100vw/40), 25px);
-        
 
         display:inline-block;
         width: calc(800vw/40);
@@ -107,8 +107,8 @@
         font-weight: 400;
         line-height: normal;
         text-align: left;
-        
     }
+
     .item-body {
         height: 50px;
         width: inherit;

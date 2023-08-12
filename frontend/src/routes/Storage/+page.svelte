@@ -3,7 +3,7 @@
 </script>
 
 <body>
-    <Storage />    
+    <Storage />
 </body>
 
 <style>

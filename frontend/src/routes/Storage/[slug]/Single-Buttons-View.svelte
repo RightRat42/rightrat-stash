@@ -20,12 +20,11 @@ export let id = "0"
         display: flex;
         position: relative;
         align-self: flex-end;
-        
+
         width: 100vw;
         flex: 5;
         justify-content: space-evenly;
-        
-        
+
         border-radius: 25px;
         border: 2px solid #000;
         box-sizing: border-box;
@@ -48,7 +47,7 @@ export let id = "0"
         text-decoration: none;
         color: #000;
     }
-    
+
     p {
         display: relative;
         margin: 0;
@@ -66,8 +65,4 @@ export let id = "0"
         filter: brightness(95%);
         cursor: pointer;
     }
-
-    
-
-
 </style>

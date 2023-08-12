@@ -8,8 +8,7 @@
 
 
     let dataobj = JSON.parse(JSON.stringify(data));
-    
-    
+
     export let itemID: string = $page.params.slug;
     export let title: string = "Item title";
     export let type: string = "text";
@@ -17,7 +16,7 @@
 
     let innerID: number = 0;
     let parentUrl = $page.url.origin + base + "/Storage/" + itemID + "/";
-    
+
     for (let i = 0; i < data.items.length; ++i){
         if (data.items[i].id == itemID) {
             title = dataobj.items[i].title
@@ -28,8 +27,6 @@
     }
 
     let textContent = content;
-
-    
 </script>
 
 <body>
@@ -62,7 +59,7 @@
         padding: 10px;
         display: flex;
         position: relative;
-        
+
         flex-direction: column;
         flex-wrap: wrap;
         flex: 90;
@@ -97,12 +94,11 @@
         display: flex;
         position: relative;
         align-self: flex-end;
-        
+
         width: 100vw;
         flex: 5;
         justify-content: space-evenly;
-        
-        
+
         border-radius: 25px;
         border: 2px solid #000;
         box-sizing: border-box;
@@ -127,12 +123,12 @@
         font-size: 15px;
         color: #000;
     }
-    
+
     p {
         display: relative;
         margin: 0;
         position: relative;
-        
+
         text-align: center;
         user-select: none;
     }
@@ -140,5 +136,9 @@
     .click:hover {
         filter: brightness(95%);
         cursor: pointer;
+    }
+
+    *::-webkit-scrollbar{
+        display: none;
     }
 </style>
