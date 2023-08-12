@@ -141,4 +141,8 @@
         filter: brightness(95%);
         cursor: pointer;
     }
+
+    *::-webkit-scrollbar{
+        display: none;
+    }
 </style>

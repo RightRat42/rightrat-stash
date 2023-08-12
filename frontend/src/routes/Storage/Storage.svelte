@@ -107,8 +107,6 @@
         }
     }
 
-    
-
     .gridContainer {
         overflow: auto;
         place-self: center;

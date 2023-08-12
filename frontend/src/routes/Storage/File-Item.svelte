@@ -134,4 +134,7 @@
         border-radius: 0px 0px 25px 25px;
         background: #844242;
     }
+    *::-webkit-scrollbar{
+        display: none;
+    }
 </style>
