@@ -30,6 +30,7 @@
         min-width: inherit;
         min-height: inherit;
         text-align: center;
+        text-decoration: none;
     }
 
     .item {
@@ -109,6 +110,7 @@
         text-align: left;
         
     }
+
     .item-body {
         height: 50px;
         width: inherit;

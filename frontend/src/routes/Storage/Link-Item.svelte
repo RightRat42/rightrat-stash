@@ -32,6 +32,7 @@
         min-width: inherit;
         min-height: inherit;
         text-align: center;
+        text-decoration: none;
     }
     .item {
         min-width: 250px;
@@ -76,7 +77,7 @@
         font-size: max(min(3vw, 25px), 20px);
         font-style: normal;
         font-weight: 700;
-        line-height: normal;        
+        line-height: normal;
     }
 
     .link-url {
@@ -104,7 +105,6 @@
         line-height: normal;
         text-decoration-line: underline;
         text-align: left;
-        
     }
     .item-body {
         height: 50px;

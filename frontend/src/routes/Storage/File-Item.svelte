@@ -33,6 +33,7 @@
         min-width: inherit;
         min-height: inherit;
         text-align: center;
+        text-decoration: none;
     }
 
     .item {
