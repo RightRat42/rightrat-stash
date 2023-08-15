@@ -3,23 +3,30 @@
     export let name: string = "default"
 </script>
 
-<header>
-    {#if name != "default"}
+<body>
+    
+    <header>
+        {#if name != "default"}
         <h1>{ name }</h1>
         
-    {:else}
+        {:else}
         <h1>RightRat's Stash</h1>
-    {/if}
-</header>
-{#if type == "storage"}
-<div class="addDiv">
-    <button class="add">
-        + Add
-    </button>
+        {/if}
+    </header>
+    {#if type == "storage"}
+    <div class="addDiv">
+        <button class="add">
+            + Add
+        </button>
 </div>
 {/if}
+</body>
 
 <style>
+
+    body {
+        max-height: 15vh;
+    }
     header {
         margin: 0;
         min-width: 250px;

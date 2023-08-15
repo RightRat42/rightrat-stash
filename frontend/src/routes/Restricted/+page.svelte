@@ -1,6 +1,7 @@
 <script lang="ts">
     import * as libFirebase from '$lib/firebase';
     import authStore from '$stores/authStore';
+    import { docs } from '$lib/firebase';
 </script>
   
 <h1>Hi!</h1>
@@ -14,6 +15,8 @@
             Loading docs...
         {:then _}
             <p>docs: {JSON.stringify(libFirebase.docs)}</p>
+
+            <a href="/Storage">Go to Storage</a>
         {/await}
     {/if}
 <!--{/if}-->

@@ -27,8 +27,6 @@
         }
     }
 
-    let textContent = content;
-
     
 </script>
 
@@ -36,11 +34,13 @@
     <Header name="{ title }"/>
     <div class="displayItem">
         {#if type == "link"}
-            <textarea id="itemContent" name="linkUrl" bind:value={textContent}></textarea>
+            <textarea id="itemContent" name="linkUrl" bind:value={content}></textarea>
+        {:else if type == "text"}
+            <textarea id="itemContent" name="text" bind:value={content}></textarea>
         {/if}
     </div>
     <footer>
-        <button class="click" on:click={SaveChanges(textContent, innerID)}>
+        <button class="click" on:click={SaveChanges(content, innerID)}>
             <p>save</p>
         </button>
         <a class="click" href="{ parentUrl }">

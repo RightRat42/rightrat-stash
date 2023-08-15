@@ -1,28 +1,19 @@
 import data from "../../../backend/src/assets/data.json";
-import files from "../../../backend/src/assets/files.json";
+import firebase from 'firebase/app';
+import 'firebase/auth';
+import 'firebase/firestore';
+import { loadDocs, docs } from "$lib/firebase";
 
-let dataSize: number = data.items.length;
-let items = data.items;
+// let dataSize: number = data.items.length;
+// let items = data.items;
 
-export function get_items_ids () : string[] {
-    let ids: string[] = [];
-    for (let i = 0; i < dataSize; ++i){
-        ids[i] = items[i].id;
+export async function get_items() {
+    if (docs !== null){
+        return docs;
     }
-    return ids;
-}
+    await loadDocs();
 
-export function get_items_by_ids (ids: string[]) {
-    let ret = [];
-    let idsSize: number = ids.length;
-    for (let i = 0; i < idsSize; ++i) {
-        for (let j = 0; j < dataSize; ++j) {
-            if (ids[i] == items[j].id) {
-                ret.push(items[j]);
-            }
-        }
-    }
-    return ret;
+    return docs!;
 }
 
 export function SaveChanges(textContentToSave: string, innerID: number): undefined {

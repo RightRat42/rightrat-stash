@@ -7,7 +7,7 @@ import {
     PUBLIC_FIREBASE_APP_ID,
 } from '$env/static/public';
 
-const firebaseConfig = {
+export const firebaseConfig = {
     apiKey: PUBLIC_FIREBASE_API_KEY,
     authDomain: PUBLIC_FIREBASE_AUTH_DOMAIN,
     projectId: PUBLIC_FIREBASE_PROJECT_ID,
@@ -23,7 +23,9 @@ import 'firebase/firestore';
 
 export let docs: Object[] | null = null;
 
-export function firebaseInit() {
+export async function firebaseInit() {
+    console.log("was here");
+    
     if( ! firebase.apps.length ) {
         firebase.initializeApp(firebaseConfig);
     }
@@ -60,6 +62,7 @@ export async function loadDocs() {
             //console.log(doc.id, " => ", doc.data());
         });
         console.log("returning", docs.length, "docs:", docs);
+        return docs!;
     }).catch(e => {
         console.log("failed to fetch data:",e.message);
         docs = [ "Failed to fetch: " + e.message ]
