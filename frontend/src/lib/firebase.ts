@@ -62,7 +62,6 @@ export async function loadDocs() {
             //console.log(doc.id, " => ", doc.data());
         });
         console.log("returning", docs.length, "docs:", docs);
-        return docs!;
     }).catch(e => {
         console.log("failed to fetch data:",e.message);
         docs = [ "Failed to fetch: " + e.message ]

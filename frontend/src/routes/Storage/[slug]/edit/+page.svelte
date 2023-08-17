@@ -1,32 +1,24 @@
 <script lang="ts">
     import { base } from "$app/paths";
     import { page } from "$app/stores"
-    import data from "../../../../../../backend/src/assets/data.json"
-    import files from "../../../../../../backend/src/assets/files.json"
     import Header from "../../../Global/Header.svelte";
     import { SaveChanges } from "../../../prosloika";
-
-
-    let dataobj = JSON.parse(JSON.stringify(data));
-    
+    import { docs } from "$lib/firebase";
     
     export let itemID: string = $page.params.slug;
     export let title: string = "Item title";
     export let type: string = "text";
     export let content: string = "Sample text";
 
-    let innerID: number = 0;
     let parentUrl = $page.url.origin + base + "/Storage/" + itemID + "/";
     
-    for (let i = 0; i < data.items.length; ++i){
-        if (data.items[i].id == itemID) {
-            title = dataobj.items[i].title
-            type = dataobj.items[i].type;
-            content = dataobj.items[i].content; 
-            innerID = i;
+    docs?.forEach((x) => {
+        if (x.id == itemID){
+            title = x.data.title;
+            type = x.data.type;
+            content = x.data.content;
         }
-    }
-
+    })
     
 </script>
 
@@ -40,7 +32,7 @@
         {/if}
     </div>
     <footer>
-        <button class="click" on:click={SaveChanges(content, innerID)}>
+        <button class="click" on:click={SaveChanges(content, itemID)}>
             <p>save</p>
         </button>
         <a class="click" href="{ parentUrl }">

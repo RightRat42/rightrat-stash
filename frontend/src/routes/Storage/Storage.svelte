@@ -6,7 +6,7 @@
     import Header from "../Global/Header.svelte";
     import authStore from "$stores/authStore";
     import { loadDocs, docs } from "$lib/firebase";
-    
+
 </script>
 
 <body>
@@ -16,17 +16,17 @@
         {#if !$authStore.isLoggedIn}
             <p><a href="/Login">Log in</a></p>
         {:else}
-        {#await loadDocs()}
+        {#await fetcher.get_items()}
             <p>Now loading...</p>
         {:then _} 
             {#each docs as x}
             <div class="gridContainer">
                 {#if x.data.type=="link"}
-                <LinkItem id="{ x.data.id }" title="{ x.data.title }" content="{ x.data.content }" tags={ x.data.tags }/>
+                <LinkItem id="{ x.id }" title="{ x.data.title }" content="{ x.data.content }" tags={ x.data.tags }/>
                 {:else if x.data.type=="text"}
-                <TextItem id="{ x.data.id }" title="{ x.data.title }" content="{ x.data.content }" tags={ x.data.tags }/>
+                <TextItem id="{ x.id }" title="{ x.data.title }" content="{ x.data.content }" tags={ x.data.tags }/>
                 {:else if x.data.type=="file"}
-                <FileItem id="{ x.data.id }" title="{ x.data.title }" content="{ x.data.content }" tags={ x.data.tags }/>
+                <FileItem id="{ x.id }" title="{ x.data.title }" content="{ x.data.content }" tags={ x.data.tags }/>
                 {/if}
                 
             </div>

@@ -11,12 +11,12 @@
     {:else}
         <p>Logged in as: {$authStore.user?.email}</p>
         <p><button on:click={libFirebase.firebaseLogout}>Log out</button></p>
-        {#await libFirebase.loadDocs()}
+        <!-- {#await libFirebase.loadDocs()}
             Loading docs...
         {:then _}
             <p>docs: {JSON.stringify(libFirebase.docs)}</p>
 
             <a href="/Storage">Go to Storage</a>
-        {/await}
+        {/await} -->
     {/if}
 <!--{/if}-->

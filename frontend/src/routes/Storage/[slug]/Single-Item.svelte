@@ -1,10 +1,15 @@
 <script lang="ts">
+    import authStore from '$stores/authStore';
+
     export let type: string = "text";
     export let content: string = "Sample text";
 
 </script>
 
 <div class="displayItem">
+    {#if !$authStore.isLoggedIn}
+    <p><a href="/Login">Log in</a></p>
+    {:else}
     {#if type == "link"}
         <a href="https://{ content }" target="_blank">
             <p>{ content }</p>
@@ -18,7 +23,7 @@
     {:else}
         <p>error</p>
     {/if}
-
+    {/if}
 </div>
 
 <style>
