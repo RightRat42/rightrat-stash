@@ -1,6 +1,5 @@
 import { error } from '@sveltejs/kit';
 import type { PageLoad } from './$types';
-import data from "../../../../../backend/src/assets/data.json"
 import { docs } from '$lib/firebase';
 
 // export const load = (({ params }) => {
