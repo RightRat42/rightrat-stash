@@ -1,34 +1,70 @@
-import data from "../../../backend/src/assets/data.json";
-import files from "../../../backend/src/assets/files.json";
+import firebase from 'firebase/app';
+import 'firebase/auth';
+import 'firebase/firestore';
+import { loadDocs, docs, ids } from "$lib/firebase";
 
-let dataSize: number = data.items.length;
-let items = data.items;
+// let dataSize: number = data.items.length;
+// let items = data.items;
 
-export function get_items_ids () : string[] {
-    let ids: string[] = [];
-    for (let i = 0; i < dataSize; ++i){
-        ids[i] = items[i].id;
+export async function get_items () {
+    if (docs !== null){
+        return docs;
     }
-    return ids;
+    await loadDocs();
+
+    return docs!;
 }
 
-export function get_items_by_ids (ids: string[]) {
-    let ret = [];
-    let idsSize: number = ids.length;
-    for (let i = 0; i < idsSize; ++i) {
-        for (let j = 0; j < dataSize; ++j) {
-            if (ids[i] == items[j].id) {
-                ret.push(items[j]);
-            }
-        }
-    }
-    return ret;
-}
-
-export function SaveChanges(textContentToSave: string, innerID: number): undefined {
-        
-    data.items[innerID].content = textContentToSave;
-    console.log(data.items[innerID].content);
+export async function deleteDoc (itemID: string) {
+    const db = firebase.firestore();
+    delete docs[docs.findIndex((t:any)=>t.id==itemID)];
+    delete ids[ids.findIndex((t:any)=>t==itemID)];
+    await db.collection("data-prod").doc(itemID).delete().then(() => {
+        console.log("Document successfully deleted!");
+    }).catch((error) => {
+        console.error("Error removing document: ", error);
+        alert("Error updating document: " + error);
+    });
     
-    // console.log(data.items[innerID].content);
+}
+
+export async function createAndSave (title: string, type: string, textContentToSave: string): Promise<void> {
+    const db = firebase.firestore();
+    const itemRef = await db.collection("data-prod").doc();
+    ids.push(itemRef.id);
+    return itemRef.set({
+        title: title,
+        type : type,
+        content: textContentToSave
+    })
+    .then(() => {
+        console.log("Document successfully created and saved!");
+    })
+    .catch((error) => {
+        console.error("Error updating document: ", error);
+        alert("Error updating document: " + error);
+    });
+}
+
+export async function saveChanges (title: string, type: string, textContentToSave: string, innerID: string): Promise<void> {
+    const db = firebase.firestore();
+    const itemRef = db.collection("data-prod").doc(innerID)
+    return itemRef.update({
+        title: title,
+        type : type,
+        content: textContentToSave
+    })
+    .then(() => {
+        console.log("Document successfully updated!");
+    })
+    .catch((error) => {
+        console.error("Error updating document: ", error);
+        alert("Error updating document: " + error);
+    });
+}
+
+export async function getItemById (id: string) {
+    let found = await docs?.find((item: any) => id == item.id);
+    console.log(found)
+    return found;
 }

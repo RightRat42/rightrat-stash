@@ -1,31 +1,38 @@
 <script lang="ts">
-    import FileItem from "./File-Item.svelte";
     import LinkItem from "./Link-Item.svelte";
     import TextItem from "./Text-Item.svelte";
     import * as fetcher from "../prosloika";
     import Header from "../Global/Header.svelte";
-    let items: any = [];
-    let ids = [];
-    ids = fetcher.get_items_ids();
-    items = fetcher.get_items_by_ids(ids);
+    import authStore from "$stores/authStore";
+    import { docs } from "$lib/firebase";
+
 </script>
 
 <body>
     <Header type="storage" />
     
     <div class="storage">
-        {#each items as x}
-        <div class="gridContainer">
-            {#if x.type=="link"}
-                <LinkItem id="{ x.id }" title="{ x.title }" content="{ x.content }" tags={ x.tags }/>
-            {:else if x.type=="text"}
-                <TextItem id="{ x.id }" title="{ x.title }" content="{ x.content }" tags={ x.tags }/>
-            {:else if x.type=="file"}
-                <script lang="ts"></script>
-                <FileItem id="{ x.id }" title="{ x.title }" content="{ x.content }" tags={ x.tags }/>
-            {/if}
-        </div>
-        {/each}
+        {#if !$authStore.isLoggedIn}
+            <p><a href="/Login">Log in</a></p>
+        {:else}
+        {#await fetcher.get_items()}
+            <p>Now loading...</p>
+        {:then _} 
+            {#each docs as x}
+            <div class="gridContainer">
+                {#if x.data.type=="link"}
+                <LinkItem id="{ x.id }" title="{ x.data.title }" content="{ x.data.content }" tags={ x.data.tags }/>
+                {:else if x.data.type=="text"}
+                <TextItem id="{ x.id }" title="{ x.data.title }" content="{ x.data.content }" tags={ x.data.tags }/>
+                
+                {/if}
+                
+            </div>
+            {/each}
+        {:catch error}
+            <h2 style="color:red">{error}</h2>
+        {/await}
+        {/if}
     </div>
 </body>
 
@@ -52,6 +59,7 @@
         width: 100vw;
         flex-shrink: 0;
         min-width: 250px;
+        min-height: 85vh;
         justify-content: space-evenly;
         align-items:center;
 

@@ -8,17 +8,15 @@
             <h1>RightRat's Stash</h1>
         </div>
         <div class="center">
-            <h2>This is the homepage of my app. </h2>
+            <h2>...who was dumb enough to name it like that..?</h2>
+            <p>
+                For a long time, I, RightRat, have dreamt about little something that could allow a simple tool for sharing data from my PC to phone and vice versa. Also, I wanted for it to be seen, because for the most part, it would be memos, funny quotes etc.
+                <br>So, I, being a dimwit, decided to combine those two concepts and create this "little something" in the least comfortable way of doing so.
+            </p>
             
-            <div class="links">
-                <a href="{ base }/Storage"> 
-                    <!-- <p class="rat">ᘛ⁐̤ᕐᐷ</p> -->
-                    Storage
-                </a>
-                <a href="{ base }/About">
-                    About
-                </a>
-            </div>
+            <a href="{ base }/Storage"> 
+                <p class="rat">ᘛ⁐̤ᕐᐷ</p>
+            </a>
         </div>
     </div>
 </body>
@@ -63,14 +61,6 @@
         background: #FEE;
     }
 
-    .links {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-evenly;
-        padding: 0px;
-        min-width: max(100vw, 250px);
-    }
-
     h1 {
         color: red;
         text-align: center;
@@ -92,6 +82,15 @@
 
     }
     
+    p {
+        color: #600;
+        text-align: center;
+        font-family: Inter;
+        font-size: min(max(4vw, 10px), 25px);
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+    }
     .center {
         display: flex;
         flex-direction: column;
@@ -105,6 +104,17 @@
         border: 2px solid #000;
         box-sizing: border-box;
         background: #FFF;
+    }
+
+    .rat {
+        color: #F00;
+        text-align: center;
+        font-family: Inter;
+        font-size: min(max(4vw, 20px), 40px);
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+
     }
 
     a {

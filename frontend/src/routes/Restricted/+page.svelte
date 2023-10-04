@@ -1,24 +1,29 @@
 <script lang="ts">
-    import { base } from "$app/paths";
+    import { base } from '$app/paths';
+    import * as libFirebase from '$lib/firebase';
+    import authStore from '$stores/authStore';
+    import { docs } from '$lib/firebase';
 </script>
-
+  
 <body>
     <div class="mainblock">
         <div class="title">
-            <h1>RightRat's Stash</h1>
+            <h1>Hi!</h1>
         </div>
+        <!--{#if $authStore.firebaseControlled}-->
         <div class="center">
-            <h2>This is the homepage of my app. </h2>
-            
-            <div class="links">
-                <a href="{ base }/Storage"> 
-                    <!-- <p class="rat">ᘛ⁐̤ᕐᐷ</p> -->
-                    Storage
-                </a>
-                <a href="{ base }/About">
-                    About
-                </a>
-            </div>
+
+            {#if !$authStore.isLoggedIn}
+            <p><a href="/Login">Log in</a></p>
+            {:else}
+            <p>Logged in as: {$authStore.user?.email}</p>
+            <p><button on:click={libFirebase.firebaseLogout}>Log out</button></p>
+            {#await libFirebase.loadDocs()}
+                Loading docs...
+                {:then _}
+                <a href="{ base }/Storage">Go to Storage</a>
+                {/await}
+                {/if}
         </div>
     </div>
 </body>
@@ -63,14 +68,6 @@
         background: #FEE;
     }
 
-    .links {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-evenly;
-        padding: 0px;
-        min-width: max(100vw, 250px);
-    }
-
     h1 {
         color: red;
         text-align: center;
@@ -81,7 +78,8 @@
         line-height: normal;
     }
 
-    h2 {
+    button {
+        background-color: #FFF;
         color: #B00;
         text-align: center;
         font-family: Inter;
@@ -89,9 +87,33 @@
         font-style: normal;
         font-weight: 700;
         line-height: normal;
+        border: 3px solid black ;
+        border-radius: 10px;
 
     }
     
+    p {
+        color: #600;
+        text-align: center;
+        font-family: Inter;
+        font-size: min(max(4vw, 10px), 25px);
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        text-decoration: none;
+    }
+    
+    a {
+        color: #600;
+        text-align: center;
+        font-family: Inter;
+        font-size: min(max(4vw, 10px), 25px);
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        text-decoration: none;
+    }
+
     .center {
         display: flex;
         flex-direction: column;
@@ -107,29 +129,5 @@
         background: #FFF;
     }
 
-    a {
-        text-decoration-line: none;
-        color: #600;
-        text-align: center;
-        font-family: Inter;
-        font-size: min(max(4vw, 10px), 25px);
-        font-style: normal;
-        font-weight: 700;
-        line-height: normal;
-    }
-    
-    :global(body) {
-        margin: 0;
-        padding: 10;
-        background-color: #FFF;
-    }
-    * ::webkit-scrollbar {
-    display: none;
-}
-
-* {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-  }
-
 </style>
+

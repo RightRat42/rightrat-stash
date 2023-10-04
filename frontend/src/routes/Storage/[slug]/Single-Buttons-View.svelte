@@ -1,8 +1,14 @@
 <script lang="ts">
+    import { page } from "$app/stores";
     import { base } from "$app/paths";
-    import { onMount } from 'svelte';
+    import { deleteDoc } from "../../prosloika";
 
 export let id = "0"
+
+async function deleteItem () {
+    await deleteDoc(id);
+    window.location.replace($page.url.origin + base + "/Storage/");
+}
 
 </script>
 
@@ -10,7 +16,7 @@ export let id = "0"
     <a class="click" href="{base}/Storage/{ id }/edit">
         <p>edit</p>
     </a>
-    <button class="click">
+    <button class="click" on:click={ deleteItem }>
         delete
     </button>
 </footer>
