@@ -3,7 +3,7 @@
     import Tag from "./Tag.svelte";
     export let title: string = "Link title...";
     export let content: string = "g.co";
-    export let tags: string[] = ["cool", "test", "test4"];
+    export let tags: string[] = ["test1", "test2", "test3"];
     export let id: string = "0";
 </script>
 
@@ -14,7 +14,7 @@
         </a>
     </div>
     <div class="item-body">
-        <a href="https://{ content }" target="_blank">
+        <a href="{ content }" target="_blank">
             <p class="link-url" >{ content }</p>
         </a>
     </div>

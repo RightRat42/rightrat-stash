@@ -1,4 +1,5 @@
 <script lang="ts">
+    import { base } from "$app/paths";
     export let type: string = "default";
     export let name: string = "default"
 </script>
@@ -15,10 +16,10 @@
     </header>
     {#if type == "storage"}
     <div class="addDiv">
-        <button class="add">
+        <a href="{base}/Storage/New" class="add">
             + Add
-        </button>
-</div>
+        </a>
+    </div>
 {/if}
 </body>
 
@@ -81,12 +82,28 @@
     }
 
     .add {
+        background-color: #FFF;
         display: inline-block;
         margin: 0;
         padding: 0;
         width: 10vw;
         overflow: hidden;
         white-space: nowrap;
+        color: #000;
+        text-align: center;
+        font-family: Inter;
+        font-size: max(3vw, 20px);
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
         font-size: min(3vw, 20px);
+        text-decoration: none;
+        border: 1px solid #000 ;
+        border-radius: 10px;
+    }
+
+    .add:hover{
+        filter: brightness(95%);
+        cursor: pointer;
     }
 </style>

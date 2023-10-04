@@ -6,7 +6,7 @@
     import Header from "../../Global/Header.svelte";
     import SingleButtonsView from "./Single-Buttons-View.svelte";
     import SingleItem from "./Single-Item.svelte";
-    import { getItemById, get_items } from "../../prosloika";
+    import { getItemById} from "../../prosloika";
 
     export let itemID: string = $page.params.slug;
     export let title: string = "Item title";
@@ -14,7 +14,7 @@
     export let content: string = "Sample text";
     
 
-    docs?.forEach((x) => {
+    docs?.forEach((x: any) => {
         if (x.id == itemID){
             title = x.data.title;
             type = x.data.type;

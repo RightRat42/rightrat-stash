@@ -22,10 +22,9 @@ import 'firebase/auth';
 import 'firebase/firestore';
 
 export let docs: any = null;
+export let ids: string[] = [];
 
 export async function firebaseInit() {
-    console.log("was here");
-    
     if( ! firebase.apps.length ) {
         firebase.initializeApp(firebaseConfig);
     }
@@ -58,6 +57,7 @@ export async function loadDocs() {
         docs = [];
         querySnapshot.forEach((doc) => {
             docs!.push( { "id": doc.id, "data": doc.data() } );
+            ids.push(doc.id);
             //console.log("got doc", doc.id);
             //console.log(doc.id, " => ", doc.data());
         });

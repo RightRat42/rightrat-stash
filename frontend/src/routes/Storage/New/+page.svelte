@@ -3,15 +3,15 @@
     import authStore from '$stores/authStore';
     import { base } from "$app/paths";
     import { page } from "$app/stores"
-    import Header from "../../../Global/Header.svelte";
-    import { saveChanges } from "../../../prosloika";
-    import { docs } from "$lib/firebase";
+    import Header from "../../Global/Header.svelte";
+    import { createAndSave } from "../../prosloika";
+    import { docs} from "$lib/firebase";
     
-    export let itemID: string = $page.params.slug;
     export let title: string = "Item title";
     export let type: string = "text";
     export let content: string = "Sample text";
-
+    export let itemID: string = "0";
+    
     let storageUrl: string = $page.url.origin + base + "/Storage/";
     console.log(storageUrl);
 
@@ -66,7 +66,7 @@
     }
 
     async function saveAll () {
-        await saveChanges(title, type, content, itemID);
+        await createAndSave(title, type, content);
         window.location.replace(storageUrl);
     }
     
