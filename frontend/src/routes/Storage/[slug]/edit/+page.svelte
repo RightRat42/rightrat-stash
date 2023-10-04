@@ -1,6 +1,6 @@
 <script lang="ts">
     import { loginWithGoogle } from "$lib/firebase";
-    import authStore from '$stores/authStore';
+    import authStore from "../../../../stores/authStore";
     import { base } from "$app/paths";
     import { page } from "$app/stores"
     import Header from "../../../Global/Header.svelte";

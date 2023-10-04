@@ -1,5 +1,5 @@
 <script lang="ts">
-    import authStore from '$stores/authStore';
+    import authStore from "../../../stores/authStore";
 
     export let type: string = "text";
     export let content: string = "Sample text";
