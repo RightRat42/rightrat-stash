@@ -11,11 +11,9 @@
     export let title: string = "Item title";
     export let type: string = "text";
     export let content: string = "Sample text";
-
+    export let tags: string[] = docs[docs.findIndex((t:any)=>t.id==itemID)].data.tags;
     let storageUrl: string = $page.url.origin + base + "/Storage/";
     console.log(storageUrl);
-
-    const input = document.querySelector("input")
 
     docs?.forEach((x: any) => {
         if (x.id == itemID){
@@ -37,6 +35,15 @@
         }
     }
     
+    function addTag () {
+        let tag: string = ""
+        tags = [...tags, tag]
+    }
+
+    const deleteTag = (tag: string) => {
+        tags = tags.filter(i => i !== tag);
+    }
+    
     function checkInput () {
         let valid = true;
         title = title.trim();
@@ -53,6 +60,10 @@
         else if (content == ""){
             valid = false;
             alert("Content field cannot be empty!");
+        }
+        else if (tags.includes("")){
+            valid = false;
+            alert("Tags cannot be empty!");
         }
         else if (typeNum == 2){
             if (!(/(https?:\/\/[^\s]+)/g.test(content))) {
@@ -81,21 +92,32 @@
         {/await}
     {:else}
     <Header name="Edit item"/>
-    <div class="editTitle">
+    <div class="container">
         <p class="itemTitlePrompt">Item name: </p>
         <input type="text" name="title" class="titleInput" size="40" bind:value={ title }>
-    </div>
-    <div class="editType">
-        <input type="radio" name="type" class="typeInput" value=1 bind:group={ typeNum } on:click={ updateField } checked>Text<br>
-        <input type="radio" name="type" class="typeInput" value=2 bind:group={ typeNum } on:click={ updateField } >Link<br>
-
-    </div>
-    <div class="editItem">
+   
+        <div class="radio">
+            <input type="radio" name="type" class="typeInput" value=1 bind:group={ typeNum } on:click={ updateField } checked>Text<br>
+            <input type="radio" name="type" class="typeInput" value=2 bind:group={ typeNum } on:click={ updateField } >Link<br>
+        </div>
+    
+    
         {#if typeNum == 2}
             <input type="url" name="url" id="urlInput" class="urlInput" placeholder="https://www.example.com" pattern="https://.*" bind:value={content}>
         {:else if typeNum == 1}
-            <textarea id="itemContent" name="text" bind:value={content}></textarea>
+            <textarea id="itemContent" name="text" bind:value={content} placeholder="Lorem..."></textarea>
         {/if}
+    
+    
+        <ul>
+            {#each tags as tag}
+                <li>
+                    <input type="text" name="tag" class="tagInput" placeholder="tag" bind:value={tag}>  
+                    <button on:click={() => deleteTag(tag)}>&times;</button>
+                </li>
+            {/each}
+        </ul>
+        <button class="addTag" on:click={addTag}>+ Add tag</button>
     </div>
     <footer>
         <button class="click" on:click={ checkInput }>
@@ -117,7 +139,25 @@
         background-color: #888;
     }
 
-    .editItem {
+    .radio {
+        padding: 10px;
+        display: flex;
+        position: relative;
+        
+        flex-direction: row;
+        flex-wrap: wrap;
+        flex: 90;
+        width: 100vw;
+        height: auto;
+        flex-shrink: 0;
+        min-width: 250px;
+        justify-content: center;
+        align-items:center;
+        box-sizing: border-box;
+        background: #FFF;
+    }
+
+    .container {
         padding: 10px;
         display: flex;
         position: relative;
@@ -194,12 +234,6 @@
         
         text-align: center;
         user-select: none;
-    }
-
-    .editTitle {
-        display: flex;
-        flex-direction: row;
-        justify-content: start;
     }
 
     .itemTitlePrompt {

@@ -28,14 +28,15 @@ export async function deleteDoc (itemID: string) {
     
 }
 
-export async function createAndSave (title: string, type: string, textContentToSave: string): Promise<void> {
+export async function createAndSave (title: string, type: string, textContentToSave: string, tags: string[]): Promise<void> {
     const db = firebase.firestore();
     const itemRef = await db.collection("data-prod").doc();
     ids.push(itemRef.id);
     return itemRef.set({
         title: title,
         type : type,
-        content: textContentToSave
+        content: textContentToSave,
+        tags: tags
     })
     .then(() => {
         console.log("Document successfully created and saved!");
