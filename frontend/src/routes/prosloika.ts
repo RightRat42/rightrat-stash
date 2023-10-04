@@ -17,19 +17,22 @@ export async function get_items () {
 
 export async function deleteDoc (itemID: string) {
     const db = firebase.firestore();
-    db.collection("data-prod").doc(itemID).delete().then(() => {
+    delete docs[docs.findIndex((t:any)=>t.id==itemID)];
+    delete ids[ids.findIndex((t:any)=>t==itemID)];
+    await db.collection("data-prod").doc(itemID).delete().then(() => {
         console.log("Document successfully deleted!");
     }).catch((error) => {
         console.error("Error removing document: ", error);
         alert("Error updating document: " + error);
     });
+    
 }
 
 export async function createAndSave (title: string, type: string, textContentToSave: string): Promise<void> {
     const db = firebase.firestore();
     const itemRef = await db.collection("data-prod").doc();
     ids.push(itemRef.id);
-    const res = await itemRef.set({
+    return itemRef.set({
         title: title,
         type : type,
         content: textContentToSave
@@ -38,7 +41,6 @@ export async function createAndSave (title: string, type: string, textContentToS
         console.log("Document successfully created and saved!");
     })
     .catch((error) => {
-        // The document probably doesn't exist.
         console.error("Error updating document: ", error);
         alert("Error updating document: " + error);
     });
@@ -56,7 +58,6 @@ export async function saveChanges (title: string, type: string, textContentToSav
         console.log("Document successfully updated!");
     })
     .catch((error) => {
-        // The document probably doesn't exist.
         console.error("Error updating document: ", error);
         alert("Error updating document: " + error);
     });

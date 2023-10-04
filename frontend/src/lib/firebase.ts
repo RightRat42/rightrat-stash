@@ -46,6 +46,7 @@ export async function loginWithGoogle() {
 }
 
 export async function loadDocs() {
+    console.log(docs)
     if( docs !== null ) {
         console.log("getDocs(): already loaded");
         return;
@@ -58,8 +59,6 @@ export async function loadDocs() {
         querySnapshot.forEach((doc) => {
             docs!.push( { "id": doc.id, "data": doc.data() } );
             ids.push(doc.id);
-            //console.log("got doc", doc.id);
-            //console.log(doc.id, " => ", doc.data());
         });
         console.log("returning", docs.length, "docs:", docs);
     }).catch(e => {

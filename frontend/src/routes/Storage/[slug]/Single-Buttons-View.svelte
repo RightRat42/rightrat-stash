@@ -6,7 +6,7 @@
 export let id = "0"
 
 async function deleteItem () {
-    deleteDoc(id);
+    await deleteDoc(id);
     window.location.replace($page.url.origin + base + "/Storage/");
 }
 
