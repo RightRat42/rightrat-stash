@@ -2,7 +2,7 @@
   import * as libFirebase from '$lib/firebase';
   import { goto } from '$app/navigation';
   import { onDestroy } from 'svelte';
-  import authStore from '$stores/authStore';
+  import authStore from "../../stores/authStore";
 
   const sub = authStore.subscribe(async (info) => {
     if (info.isLoggedIn) {

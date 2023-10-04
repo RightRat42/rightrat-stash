@@ -1,29 +1,18 @@
 <script lang="ts">
     import { loginWithGoogle } from "$lib/firebase";
-    import authStore from '$stores/authStore';
+    import authStore from "../../../stores/authStore";
     import { base } from "$app/paths";
     import { page } from "$app/stores"
     import Header from "../../Global/Header.svelte";
     import { createAndSave } from "../../prosloika";
-    import { docs} from "$lib/firebase";
     
-    export let title: string = "Item title";
     export let type: string = "text";
+    export let title: string = "Item title";
     export let content: string = "Sample text";
-    export let itemID: string = "0";
     
     let storageUrl: string = $page.url.origin + base + "/Storage/";
     console.log(storageUrl);
 
-    const input = document.querySelector("input")
-
-    docs?.forEach((x: any) => {
-        if (x.id == itemID){
-            title = x.data.title;
-            type = x.data.type;
-            content = x.data.content;
-        }
-    })
     let typeNum: number = (type == "link") ? 2 : 1;
 
     function updateField() {

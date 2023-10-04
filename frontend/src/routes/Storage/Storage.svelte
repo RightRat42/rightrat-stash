@@ -3,7 +3,7 @@
     import TextItem from "./Text-Item.svelte";
     import * as fetcher from "../prosloika";
     import Header from "../Global/Header.svelte";
-    import authStore from "$stores/authStore";
+    import authStore from "../../stores/authStore";
     import { docs } from "$lib/firebase";
 
 </script>
