@@ -1,3 +1,7 @@
+import firebase from 'firebase/app';
+import 'firebase/auth';
+import 'firebase/firestore';
+
 import {
     PUBLIC_FIREBASE_API_KEY,
     PUBLIC_FIREBASE_AUTH_DOMAIN,
@@ -16,11 +20,6 @@ export const firebaseConfig = {
     appId: PUBLIC_FIREBASE_APP_ID,
 };
   
-
-import firebase from 'firebase/app';
-import 'firebase/auth';
-import 'firebase/firestore';
-
 export let docs: any = null;
 export let ids: string[] = [];
 
