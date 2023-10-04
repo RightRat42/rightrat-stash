@@ -1,4 +1,3 @@
-import adapter from "@sveltejs/adapter-vercel";
 import { vitePreprocess } from "@sveltejs/kit/vite";
 
 /** @type {import('@sveltejs/kit').Config} */
@@ -14,6 +13,9 @@ const config = {
     adapter: adapter(),
     alias: {
       $stores: "src/stores",
+    },
+    paths: {
+      base: process.env.NODE_ENV === "production" ? "/rightrat-stash" : "",
     },
   },
 };
