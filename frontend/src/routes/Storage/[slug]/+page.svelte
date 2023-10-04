@@ -1,7 +1,7 @@
 <script lang="ts">
     import { docs, loginWithGoogle } from "$lib/firebase";
     import { page } from "$app/stores"
-    import authStore from '$stores/authStore';
+    import authStore from "../../../stores/authStore";
     import Header from "../../Global/Header.svelte";
     import SingleButtonsView from "./Single-Buttons-View.svelte";
     import SingleItem from "./Single-Item.svelte";
