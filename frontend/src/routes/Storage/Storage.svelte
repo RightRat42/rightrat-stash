@@ -1,5 +1,4 @@
 <script lang="ts">
-    import FileItem from "./File-Item.svelte";
     import LinkItem from "./Link-Item.svelte";
     import TextItem from "./Text-Item.svelte";
     import * as fetcher from "../prosloika";
@@ -25,8 +24,7 @@
                 <LinkItem id="{ x.id }" title="{ x.data.title }" content="{ x.data.content }" tags={ x.data.tags }/>
                 {:else if x.data.type=="text"}
                 <TextItem id="{ x.id }" title="{ x.data.title }" content="{ x.data.content }" tags={ x.data.tags }/>
-                {:else if x.data.type=="file"}
-                <FileItem id="{ x.id }" title="{ x.data.title }" content="{ x.data.content }" tags={ x.data.tags }/>
+                
                 {/if}
                 
             </div>

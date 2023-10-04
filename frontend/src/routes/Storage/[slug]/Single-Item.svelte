@@ -18,7 +18,7 @@
         <p>{ content }</p>
     {:else if type == "file"}
         <div class="imgCont">
-            <img src="data:image/jpg;base64,{content}" alt="img">
+            <img src="data:image/jpg;base64,{ content }" alt="img">
         </div>
     {:else}
         <p>error</p>

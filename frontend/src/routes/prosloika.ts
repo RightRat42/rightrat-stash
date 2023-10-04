@@ -15,7 +15,7 @@ export async function get_items () {
     return docs!;
 }
 
-export function SaveChanges (textContentToSave: string, innerID: string): undefined {
+export function saveChanges (title: string, type: string, textContentToSave: string, innerID: string): Promise<void> {
     const db = firebase.firestore();
     const itemRef = db.collection("data-prod").doc(innerID)
     return itemRef.update({
@@ -27,10 +27,12 @@ export function SaveChanges (textContentToSave: string, innerID: string): undefi
     .catch((error) => {
         // The document probably doesn't exist.
         console.error("Error updating document: ", error);
+        alert("Error updating document: " + error)
     });
 }
 
 export async function getItemById (id: string) {
-    let found = docs?.find((item: string) => id == item.id);
+    let found = await docs?.find((item: any) => id == item.id);
+    console.log(found)
     return found;
 }

@@ -21,7 +21,7 @@ import firebase from 'firebase/app';
 import 'firebase/auth';
 import 'firebase/firestore';
 
-export let docs: Object[] | null = null;
+export let docs: any = null;
 
 export async function firebaseInit() {
     console.log("was here");
