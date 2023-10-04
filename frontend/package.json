@@ -23,7 +23,7 @@
 	"type": "module",
 	"dependencies": {
 		"@sveltejs/adapter-vercel": "^3.0.3",
-		"firebase": "^8.6.1",
+		"@firebase": "^8.6.1",
 		"gh-pages": "^5.0.0"
 	}
 }
