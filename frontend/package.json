@@ -2,6 +2,7 @@
 	"name": "frontend",
 	"version": "0.0.1",
 	"private": true,
+	"type": "module",
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build",
@@ -20,7 +21,6 @@
 		"typescript": "^5.0.0",
 		"vite": "^4.4.2"
 	},
-	"type": "module",
 	"dependencies": {
 		"@sveltejs/adapter-vercel": "^3.0.3",
 		"firebase": "^8.6.1",
