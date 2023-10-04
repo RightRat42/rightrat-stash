@@ -4,7 +4,7 @@
     import * as fetcher from "../prosloika";
     import Header from "../Global/Header.svelte";
     import authStore from "$stores/authStore";
-    import { loadDocs, docs } from "$lib/firebase";
+    import { docs } from "$lib/firebase";
 
 </script>
 
