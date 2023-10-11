@@ -77,4 +77,13 @@
         place-self: center;
         margin: 10px;
     }
+    
+    * {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+
+    *::-webkit-scrollbar {
+        display: none;
+    }  
 </style>

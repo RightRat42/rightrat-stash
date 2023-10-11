@@ -115,20 +115,23 @@
     }
     * ::webkit-scrollbar {
     display: none;
-}
+    }
 
-.pageContainer {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-height: 100vh;
-}
+    .pageContainer {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-height: 100vh;
+    }
 
-* {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-  }
+    * {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
 
+    *::-webkit-scrollbar {
+        display: none;
+    }
 </style>

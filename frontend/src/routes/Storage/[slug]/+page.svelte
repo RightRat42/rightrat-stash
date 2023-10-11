@@ -50,4 +50,13 @@
         padding: 0;
         background-color: #888;
     }
+
+    * {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+
+    *::-webkit-scrollbar {
+        display: none;
+    }
 </style>

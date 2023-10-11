@@ -241,4 +241,13 @@
         filter: brightness(95%);
         cursor: pointer;
     }
+    
+    * {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+
+    *::-webkit-scrollbar {
+        display: none;
+    }
 </style>

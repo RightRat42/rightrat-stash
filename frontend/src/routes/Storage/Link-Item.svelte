@@ -129,7 +129,12 @@
         background: #424284;
     }
 
-    *::-webkit-scrollbar{
+    * {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+
+    *::-webkit-scrollbar {
         display: none;
     }
 </style>

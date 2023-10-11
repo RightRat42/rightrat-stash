@@ -16,10 +16,6 @@
         </a>
     {:else if type == "text"}
         <p>{ content }</p>
-    {:else if type == "file"}
-        <div class="imgCont">
-            <img src="data:image/jpg;base64,{ content }" alt="img">
-        </div>
     {:else}
         <p>error</p>
     {/if}
@@ -48,17 +44,12 @@
         background: #FFF;
     }
 
-    .imgCont {
-        display: contents;
-        max-height: 75vh;
-        max-width: 100%;
+    * {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
     }
 
-    img {
-        display: block;
-        height: auto;
-        width: auto;
-        max-height: 75vh;
-        border: solid 1px #000;
+    *::-webkit-scrollbar {
+        display: none;
     }
 </style>
