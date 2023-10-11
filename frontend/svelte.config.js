@@ -16,7 +16,7 @@ const config = {
       $stores: "src/stores",
     },
     paths: {
-      base: process.env.NODE_ENV === "production" ? "/" : "",
+      base: "",
     },
   },
 };
