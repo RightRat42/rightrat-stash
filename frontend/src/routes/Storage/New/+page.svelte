@@ -9,7 +9,7 @@
     export let type: string = "text";
     export let title: string = "Item title";
     export let content: string = "Sample text";
-    export let tags: string[] = docs.fi
+    export let tags: string[] = [];
     
     let storageUrl: string = $page.url.origin + base + "/Storage/";
     console.log(storageUrl);
@@ -41,6 +41,12 @@
         let valid = true;
         title = title.trim();
         content = content.trim();
+        for (let i = 0; i < tags.length; ++i){
+            if (/<\/?[a-z][\s\S]*>/i.test(tags[i])){
+                valid = false;
+                alert("You cannot submit HTML!");
+            }
+        }
         if (/<\/?[a-z][\s\S]*>/i.test(title) ||
             /<\/?[a-z][\s\S]*>/i.test(content)) {
                 valid = false;
