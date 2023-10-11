@@ -1,7 +1,7 @@
 <script lang="ts">
   import * as libFirebase from '$lib/firebase';
-  import firebase from 'firebase/app';
-  import 'firebase/auth';
+  import firebase from 'firebase/compat/app';
+  import 'firebase/compat/auth';
   import authStore from "../../stores/authStore";
   import { onMount } from 'svelte';
 
