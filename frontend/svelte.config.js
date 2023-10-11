@@ -16,12 +16,10 @@ const config = {
       $stores: "src/stores",
     },
     paths: {
-      base:
-        process.env.NODE_ENV === "production"
-          ? "/rightrat-stash.vercel.app"
-          : "",
+      base: process.env.NODE_ENV === "production" ? "/" : "",
     },
   },
 };
 
 export default config;
+// comment
