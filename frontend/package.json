@@ -22,6 +22,7 @@
 		"vite": "^4.4.2"
 	},
 	"dependencies": {
+		"@firebase/app": "^0.9.19",
 		"@sveltejs/adapter-vercel": "^3.0.3",
 		"firebase": "^8.10.1",
 		"gh-pages": "^5.0.0",
