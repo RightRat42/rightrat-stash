@@ -18,7 +18,7 @@ const config = {
     paths: {
       base:
         process.env.NODE_ENV === "production"
-          ? "https://rightrat-stash.vercel.app"
+          ? "/rightrat-stash.vercel.app"
           : "",
     },
   },
