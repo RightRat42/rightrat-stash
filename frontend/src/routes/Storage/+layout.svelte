@@ -20,7 +20,7 @@
     });
 
     console.log("authed");
-  }); // onMount
+  });
 
 </script>
 <slot/>

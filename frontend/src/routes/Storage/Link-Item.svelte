@@ -32,6 +32,7 @@
         min-width: inherit;
         min-height: inherit;
         text-align: center;
+        text-decoration: none;
     }
     .item {
         min-width: 250px;
@@ -126,5 +127,9 @@
 
         border-radius: 0px 0px 25px 25px;
         background: #424284;
+    }
+
+    *::-webkit-scrollbar{
+        display: none;
     }
 </style>

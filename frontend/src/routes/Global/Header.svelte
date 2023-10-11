@@ -26,7 +26,7 @@
 <style>
 
     body {
-        max-height: 15vh;
+        width: 100%;
     }
     header {
         margin: 0;
@@ -34,7 +34,7 @@
         display: flex;
         flex: 7;
         top: 0;
-        width: 100vw;
+        width: 100%;
         flex-shrink: 0;
         align-content: start;
         justify-content: center;
@@ -71,7 +71,7 @@
         justify-content: center;
         flex: 1;
         flex-shrink: 0;
-        width: 100vw;
+        width: 100%;
         flex-shrink: 0;
         min-width: 250px;
         border-radius: 25px;

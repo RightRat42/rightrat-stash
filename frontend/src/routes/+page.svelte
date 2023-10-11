@@ -2,23 +2,21 @@
     import { base } from "$app/paths";
 </script>
 
-<body>
-    <div class="mainblock">
-        <div class="title">
-            <h1>RightRat's Stash</h1>
-        </div>
-        <div class="center">
-            <h2>This is the homepage of my app. </h2>
-            
-            <div class="links">
-                <a href="{ base }/Storage"> 
-                    <!-- <p class="rat">ᘛ⁐̤ᕐᐷ</p> -->
-                    Storage
-                </a>
-                <a href="{ base }/About">
-                    About
-                </a>
-            </div>
+<body class="pageContainer">
+    <div class="title">
+        <h1>RightRat's Stash</h1>
+    </div>
+    <div class="center">
+        <h2>This is the homepage of my app. </h2>
+        
+        <div class="links">
+            <a href="{ base }/Storage"> 
+                <!-- <p class="rat">ᘛ⁐̤ᕐᐷ</p> -->
+                Storage
+            </a>
+            <a href="{ base }/About">
+                About
+            </a>
         </div>
     </div>
 </body>
@@ -32,31 +30,14 @@
         background-color: #888;
     }
 
-    .mainblock {
-        padding: 10px;
-        display: contents;
-
-        min-width: 250px;
-        min-height: 100vh;
-        justify-content: space-evenly;
-        align-items:center;
-
-        border-radius: 25px;
-        border: 2px solid #000;
-        box-sizing: border-box;
-        background: #FEE;
-    }
 
     .title {
         display: flex;
         align-items: center;
         justify-content: center;
         padding: 10px;
-        min-width: max(100vw, 250px);
-        min-height: 15vh;
-
-
-
+        min-width: 250px;
+        width: 100%;
         border-radius: 25px 25px 0px 0px;
         border: 2px solid #000;
         box-sizing: border-box;
@@ -98,9 +79,9 @@
         align-items: center;
         justify-content:space-between;
         padding: 20px;
-        min-width: max(100vw, 250px);
-        min-height: 85vh;
-
+        min-width: 250px;
+        width: 100%;
+        flex: 1;
         border-radius: 0px 0px 25px 25px;
         border: 2px solid #000;
         box-sizing: border-box;
@@ -110,12 +91,21 @@
     a {
         text-decoration-line: none;
         color: #600;
+        background-color: #FFF;
         text-align: center;
         font-family: Inter;
         font-size: min(max(4vw, 10px), 25px);
         font-style: normal;
         font-weight: 700;
         line-height: normal;
+        border: 2px solid #000;
+        border-radius: 25px;
+        padding: 10px;
+        transition: 0.2s;
+    }
+    a:hover {
+        filter: brightness(80%);
+        cursor: pointer;
     }
     
     :global(body) {
@@ -125,6 +115,15 @@
     }
     * ::webkit-scrollbar {
     display: none;
+}
+
+.pageContainer {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
 }
 
 * {

@@ -17,7 +17,8 @@
     let typeNum: number = (type == "link") ? 2 : 1;
 
     function updateField() {
-        if (typeNum == 1) {
+        const radiobuttons: any = document.querySelectorAll(".typeInput");
+        if (radiobuttons[0].checked) {
             type = "text";
             content = "";
         }
@@ -105,7 +106,7 @@
         {#if typeNum == 2}
             <input type="url" name="url" id="urlInput" class="urlInput" placeholder="https://www.example.com" pattern="https://.*" bind:value={content}>
         {:else if typeNum == 1}
-            <textarea id="itemContent" name="text" bind:value={content} placeholder="Lorem..."></textarea>
+            <textarea id="itemContent" name="text" bind:value={ content } placeholder="Lorem..."></textarea>
         {/if}
     
     

@@ -3,9 +3,6 @@ import "firebase/compat/auth";
 import "firebase/compat/firestore";
 import { loadDocs, docs, ids } from "$lib/firebase";
 
-// let dataSize: number = data.items.length;
-// let items = data.items;
-
 export async function get_items() {
   if (docs !== null) {
     return docs;

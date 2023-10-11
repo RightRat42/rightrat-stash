@@ -8,7 +8,7 @@
 
 </script>
 
-<body>
+<body class="pageContainer">
     <Header type="storage" />
     
     <div class="storage">
@@ -49,19 +49,15 @@
 
     .storage {
         padding: 10px;
-        display: grid;
-        grid-gap: 30px;
-        grid-template-columns: repeat(3, 1fr);
-
+        display: flex;
         flex-direction: row;
         flex-wrap: wrap;
-        flex: 90;
-        width: 100vw;
+        flex: 1;
+        width: 100%;
         flex-shrink: 0;
         min-width: 250px;
-        min-height: 85vh;
-        justify-content: space-evenly;
-        align-items:center;
+        justify-content: space-around;
+        align-items: baseline;
 
         border-radius: 25px;
         border: 2px solid #000;
@@ -69,56 +65,16 @@
         background: #FFF;
     }
 
-    @media (max-width: 800px){
-        .storage {
-            padding: 20px;
-            display: grid;
-            grid-gap: 10px;
-            grid-template-columns: repeat(2, 1fr);
-
-            flex-direction: row;
-            flex-wrap: wrap;
-            flex: 90;
-            width: 100vw;
-            flex-shrink: 0;
-            min-width: 250px;
-            justify-content: space-evenly;
-            align-items:center;
-
-            border-radius: 25px;
-            border: 2px solid #000;
-            box-sizing: border-box;
-            background: #FFF;
-        }
+    .pageContainer {
+        display: flex; 
+        flex-direction: column;
+        align-items: center;
+        min-height: 100vh;
     }
-
-    @media (max-width: 550px){
-        .storage {
-            padding: 10px;
-            display: grid;
-            grid-gap: 10px;
-            grid-template-columns: 1fr;
-
-            flex-direction: row;
-            flex-wrap: wrap;
-            flex: 90;
-            width: 100vw;
-            flex-shrink: 0;
-            min-width: 250px;
-            justify-content: space-evenly;
-            align-items:center;
-
-            border-radius: 25px;
-            border: 2px solid #000;
-            box-sizing: border-box;
-            background: #FFF;
-        }
-    }
-
-    
 
     .gridContainer {
         overflow: auto;
         place-self: center;
+        margin: 10px;
     }
 </style>
