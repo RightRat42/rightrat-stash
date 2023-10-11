@@ -42,6 +42,7 @@
         title = title.trim();
         content = content.trim();
         for (let i = 0; i < tags.length; ++i){
+            tags[i] = tags[i].trim();
             if (/<\/?[a-z][\s\S]*>/i.test(tags[i])){
                 valid = false;
                 alert("You cannot submit HTML!");
@@ -145,10 +146,6 @@
         
         flex-direction: row;
         flex-wrap: wrap;
-        flex: 90;
-        width: 100vw;
-        height: auto;
-        flex-shrink: 0;
         min-width: 250px;
         justify-content: center;
         align-items:center;
