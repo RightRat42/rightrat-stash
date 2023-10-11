@@ -1,8 +1,14 @@
 // import firebase from 'firebase/app';
-import "firebase/firestore";
+// import "firebase/firestore";
 import { initializeApp, type FirebaseApp } from "firebase/app";
 import { getFirestore, collection, getDocs } from "firebase/firestore";
-import { signInWithPopup, GoogleAuthProvider, getAuth } from "firebase/auth";
+import {
+  signInWithPopup,
+  GoogleAuthProvider,
+  getAuth,
+  signOut,
+  type Auth,
+} from "firebase/auth";
 
 import {
   PUBLIC_FIREBASE_API_KEY,
@@ -26,22 +32,27 @@ export let docs: any = null;
 export let ids: string[] = [];
 
 export let firebase: FirebaseApp;
+export let auth: Auth;
 
 export async function firebaseInit() {
   firebase = initializeApp(firebaseConfig);
   console.log("initted");
 }
 
-// export async function firebaseLogout() {
-//   await firebase.auth().signOut();
-//   docs = null;
-// }
+export async function firebaseLogout() {
+  signOut(auth)
+    .then(() => {})
+    .catch((error) => {
+      console.log(error);
+    });
+  docs = null;
+}
 
 export async function loginWithGoogle() {
   try {
     docs = null;
     const provider = new GoogleAuthProvider();
-    const auth = getAuth();
+    auth = getAuth();
     await signInWithPopup(auth, provider);
   } catch (e) {
     console.log(e);
@@ -70,4 +81,8 @@ export async function loadDocs() {
     ids.push(doc.id);
   });
   console.log("returning", docs.length, "docs:", docs);
+}
+
+export function getFirebaseInstance() {
+  return firebase;
 }
