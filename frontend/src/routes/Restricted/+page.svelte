@@ -2,7 +2,6 @@
     import { base } from '$app/paths';
     import * as libFirebase from '$lib/firebase';
     import authStore from "../../stores/authStore";
-    import { docs } from '$lib/firebase';
 </script>
   
 <body>

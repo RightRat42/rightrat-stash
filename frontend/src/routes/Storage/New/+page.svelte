@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { docs, loginWithGoogle } from "$lib/firebase";
+    import { loginWithGoogle } from "$lib/firebase";
     import authStore from "../../../stores/authStore";
     import { base } from "$app/paths";
     import { page } from "$app/stores"
